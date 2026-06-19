@@ -1,8 +1,10 @@
 from app import create_app
+from app.routes import mail
 from datetime import timedelta
 import os
 
 app = create_app()
+mail.init_app(app)
 
 # --- PERFORMANCE ARCHITECTURE ---
 
@@ -13,7 +15,6 @@ app.config['SEND_FILE_MAX_AGE_DEFAULT'] = timedelta(days=365)
 
 # 2. Response Compression
 # Compresses HTML/CSS/JS before sending it to the user.
-# Note: Requires 'pip install flask-compress'
 try:
     from flask_compress import Compress
     Compress(app)
