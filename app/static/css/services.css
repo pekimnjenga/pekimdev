@@ -1,0 +1,276 @@
+/* COLOR VARIABLES */
+:root {
+    --neon: #39FF14;
+    --dark: #0f172a;
+}
+
+/* SERVICE CARD - FLOATING EFFECT */
+.service-card {
+    position: relative;
+    padding: 3rem 2rem;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    z-index: 1;
+}
+
+/* Definition on White Background */
+.service-card {
+    border: 1px solid #f1f5f9; /* Super light gray border */
+    box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+}
+
+/* Hover State */
+.service-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--neon);
+    box-shadow: 0 20px 40px -10px rgba(57, 255, 20, 0.15); /* Neon shadow glow */
+}
+
+/* NEON GREEN ICONS */
+.service-icon {
+    font-size: 2.5rem;
+    color: var(--neon);
+    margin-bottom: 1.5rem;
+    transition: all 0.4s ease;
+}
+
+.service-card:hover .service-icon {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 8px var(--neon));
+}
+
+/* BOLD BLACK TITLES */
+.service-title {
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: var(--dark); /* Deep black/navy for readability */
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    margin-bottom: 1rem;
+}
+
+/* CLEAR DESCRIPTION TEXT */
+.service-desc {
+    font-size: 0.9rem;
+    color: #475569; /* Slate-600 for clean look */
+    line-height: 1.6;
+}
+
+/* NEON ACCENT BAR */
+.service-accent {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background: var(--neon);
+    transition: width 0.4s ease;
+}
+
+.service-card:hover .service-accent {
+    width: 100%;
+}
+
+/* ==========================================================================
+   QUOTE HUB & INTAKE FORM SYSTEM (Refined)
+   ========================================================================== */
+
+/* 1. LEFT SIDE PANEL: Glass Cards for Reasons 
+   ------------------------------------------------------------------------ */
+.glass-reason {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 1.75rem;
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-left: 3px solid #39FF14;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.glass-reason:hover {
+    background: rgba(255, 255, 255, 0.06);
+    transform: translateX(10px);
+    border-left-width: 8px;
+    box-shadow: -15px 0 30px rgba(57, 255, 20, 0.1);
+}
+
+.reason-icon {
+    font-size: 1.75rem;
+    color: #39FF14;
+    filter: drop-shadow(0 0 8px rgba(57, 255, 20, 0.4));
+}
+
+.reason-title {
+    color: white;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+}
+
+.reason-text {
+    color: #94a3b8;
+    font-size: 0.75rem;
+    line-height: 1.6;
+}
+
+
+/* 2. SERVICES VARIANT: Dark & Transparent Cyber Forms 
+   ------------------------------------------------------------------------ */
+.quote-input {
+    width: 100%;
+    padding: 1.1rem 1rem 1.1rem 3.2rem;
+    background-color: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+    font-size: 0.85rem;
+    font-family: inherit;
+    border-radius: 2px;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Form field focus and active states */
+.quote-input:focus {
+    outline: none !important;
+    background-color: rgba(57, 255, 20, 0.02) !important;
+    border-color: #39FF14 !important;
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.15);
+}
+
+/* Native Option Blocks layout fixes for Dark Select Lists */
+.quote-input option {
+    background-color: #050a15 !important;
+    color: #ffffff !important;
+    padding: 12px;
+}
+
+.quote-input option:disabled {
+    color: #64748b !important;
+}
+
+/* Interior Field Icon positioning */
+.input-icon {
+    position: absolute;
+    left: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #64748b;
+    font-size: 0.9rem;
+    pointer-events: none;
+    transition: color 0.3s ease;
+    z-index: 10;
+}
+
+/* Adjust vertical sync for message textareas */
+textarea.input-icon {
+    top: 1.25rem !important;
+    transform: none !important;
+}
+
+.quote-input:focus ~ .input-icon {
+    color: #39FF14;
+    filter: drop-shadow(0 0 4px rgba(57, 255, 20, 0.4));
+}
+
+
+/* 3. CONTACT VARIANT: Crisp White Infrastructure Forms 
+   ------------------------------------------------------------------------ */
+.contact-page-input {
+    width: 100%;
+    padding: 1.1rem 1rem 1.1rem 3.2rem;
+    background-color: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    color: #0f172a !important;
+    font-size: 0.85rem;
+    font-family: inherit;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.contact-page-input::placeholder {
+    color: #64748b !important;
+    opacity: 1;
+}
+
+.contact-page-input:focus {
+    outline: none !important;
+    border-color: #39FF14 !important;
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.2);
+}
+
+.contact-page-icon {
+    position: absolute;
+    left: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #64748b;
+    font-size: 0.9rem;
+    pointer-events: none;
+    transition: color 0.3s ease;
+    z-index: 10;
+}
+
+.contact-page-input:focus ~ .contact-page-icon {
+    color: #39FF14;
+}
+
+/* Safe UI separation for options nested inside light mode fields */
+.contact-page-input option {
+    background-color: #050a15 !important;
+    color: #ffffff !important;
+    padding: 12px;
+}
+
+
+/* 4. UTILITY REVISIONS (Cross-Page Elements)
+   ------------------------------------------------------------------------ */
+/* Fixes icon alignment inside textarea modules */
+.top-4 {
+    top: 1.25rem !important;
+    transform: none !important;
+}
+
+/* Uniform design for custom reason blocks on white background layout */
+.contact-reason-card {
+    display: flex;
+    gap: 1rem;
+    padding: 1.25rem;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.contact-reason-card:hover {
+    border-color: #39FF14;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.contact-reason-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    background: #050a15;
+    color: #39FF14;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    flex-shrink: 0;
+    font-size: 0.875rem;
+}
+
+
+/* Hover Shake Animation for Phone */
+@keyframes shake {
+    0% { transform: rotate(0); }
+    25% { transform: rotate(10deg); }
+    50% { transform: rotate(-10deg); }
+    75% { transform: rotate(10deg); }
+    100% { transform: rotate(0); }
+}
+.group:hover .shake {
+    animation: shake 0.4s ease-in-out infinite;
+}

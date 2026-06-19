@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+
+{% block title %}<title>PEKIMDEV|{{ title }}</title>{% endblock %}
+
+{% block preloads %}
+<link rel="preload" as="image" href="static/images/webp/image5.webp">
+{% endblock %}
+
+{% block content %}
+
+<section class="relative h-[70vh] min-h-[550px] flex items-center overflow-hidden bg-[#050a15]">
+    <div class="absolute inset-0 z-0">
+        <img src="static/images/webp/image5.webp" class="w-full h-full object-cover object-right opacity-90 pointer-events-none lg:scale-105 transition-transform lg:duration-[5000ms] ease-linear slide-bg" alt="Tech Background">
+        
+        <div class="absolute inset-0 bg-[#050a15]/65 z-10"></div>
+        
+        <div class="absolute inset-0 bg-gradient-to-r from-[#050a15]/50 to-transparent z-20"></div>
+    </div>
+
+    <div class="container mx-auto px-6 relative z-30">
+        <div class="max-w-4xl" data-aos="fade-right">
+            <div class="flex items-center gap-3 mb-5">
+                <div class="h-[1px] w-6 bg-[#39FF14]/60"></div>
+                <span class="font-mono text-[#39FF14] tracking-[0.5em] uppercase text-[10px] font-bold">Pekimdev Systems</span>
+            </div>
+            
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-white uppercase tracking-tight leading-[1.1] mb-6">
+                Our <br><span class="text-[#39FF14] drop-shadow-[0_0_15px_rgba(57,255,20,0.3)]">Proven Work</span>
+            </h1>
+            
+            <p class="text-slate-200 text-sm md:text-base font-light max-w-xl leading-relaxed border-t border-b border-[#39FF14]/20 py-4 px-6">
+                A curated showcase of high-end engineering. We architect robust digital platforms designed to function flawlessly and elevate brand presence.
+            </p>
+        </div>
+    </div>
+</section>
+
+<div class="bg-[#050a15] border-y border-slate-900 py-8 sticky top-0 z-40 bg-[#050a15]/90 backdrop-blur-md">
+    <div class="container mx-auto px-6">
+        <div class="flex overflow-x-auto flex-nowrap lg:flex-wrap lg:justify-center items-center gap-4 font-mono text-xs pb-4 lg:pb-0 scrollbar-hide">
+            <button data-filter="all" class="filter-btn active-filter whitespace-nowrap shrink-0">
+                ALL_SYSTEMS <span class="filter-count">[4]</span>
+            </button>
+            <button data-filter="real-estate" class="filter-btn whitespace-nowrap shrink-0">
+                REAL_ESTATE <span class="filter-count">[1]</span>
+            </button>
+            <button data-filter="ecommerce" class="filter-btn whitespace-nowrap shrink-0">
+                E_COMMERCE <span class="filter-count">[1]</span>
+            </button>
+            <button data-filter="software" class="filter-btn whitespace-nowrap shrink-0">
+                SOFTWARE <span class="filter-count">[1]</span>
+            </button>
+            <button data-filter="personal-portfolio" class="filter-btn whitespace-nowrap shrink-0">
+                PORTFOLIO <span class="filter-count">[1]</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<section class="py-20 bg-[#050a15]">
+    <div class="container mx-auto px-6">
+        <div id="project-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-x-12 gap-y-16 max-w-5xl mx-auto">
+            
+            <!-- PROJECT 1: I LIKE IT PROPERTIES -->
+            <div class="project-card group" data-category="real-estate" data-aos="fade-up">
+                <div class="project-media-box relative overflow-hidden rounded border border-slate-800 bg-slate-900/50">
+                    <img src="static/images/webp/logo.webp" class="project-media-img w-full object-cover transition-transform duration-500 group-hover:scale-105" alt="I like it Properties">
+                    <div class="project-media-overlay absolute inset-0 bg-[#050a15]/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <a href="https://ilikeitproperties.co.ke" class="view-project-link flex items-center gap-2 font-mono text-xs text-[#39FF14] border border-[#39FF14] px-4 py-2 uppercase tracking-wider hover:bg-[#39FF14]/10 transition-colors">
+                            <span>Visit Site</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>  
+                <div class="mt-5 flex items-center justify-between">
+                    <h3 class="project-card-title text-xl font-bold text-white tracking-tight group-hover:text-[#39FF14] transition-colors">I like it Properties</h3>
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-slate-400 border border-slate-800 px-2.5 py-1 bg-slate-900/40">Real Estate</span>
+                </div>
+            </div>
+
+            <!-- PROJECT 2: KIM'S SPORTS COLLECTION (ONGOING) -->
+            <div class="project-card group" data-category="ecommerce" data-aos="fade-up" data-aos-delay="100">
+                <div class="project-media-box relative overflow-hidden rounded border border-slate-800 bg-slate-900/50">
+                    <!-- ONGOING BADGE -->
+                    <div class="absolute top-3 right-3 z-20 bg-green-500/10 border border-green-500/30 text-green-400 font-mono text-[9px] uppercase tracking-widest px-2.5 py-1 rounded shadow-sm backdrop-blur-sm animate-pulse">
+                        ONGOING
+                    </div>
+                    
+                    <img src="static/images/webp/logo2.webp" class="project-media-img w-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-60" alt="Kim's Sports Collection">
+                    <div class="project-media-overlay absolute inset-0 bg-[#050a15]/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <a href="#" class="view-project-link flex items-center gap-2 font-mono text-xs text-amber-400 border border-amber-400/50 px-4 py-2 uppercase tracking-wider hover:bg-amber-400/10 transition-colors">
+                            <span>Ongoing Project</span>
+                            <i class="fa-solid fa-code text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="mt-5 flex items-center justify-between">
+                    <h3 class="project-card-title text-xl font-bold text-white tracking-tight group-hover:text-[#39FF14] transition-colors">Kim's Sports Collection</h3>
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-slate-400 border border-slate-800 px-2.5 py-1 bg-slate-900/40">E-Commerce</span>
+                </div>
+            </div>
+
+            <!-- PROJECT 3: BMI CALCULATOR -->
+            <div class="project-card group" data-category="software-health" data-aos="fade-up" data-aos-delay="200">
+                <div class="project-media-box relative overflow-hidden rounded border border-slate-800 bg-slate-900/50">
+                    <img src="static/images/webp/bmi_image.webp" class="project-media-img w-full object-cover transition-transform duration-500 group-hover:scale-105" alt="BMI Calculator">
+                    <div class="project-media-overlay absolute inset-0 bg-[#050a15]/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <a href="https://pekim-bmicalculator.vercel.app/" class="view-project-link flex items-center gap-2 font-mono text-xs text-[#39FF14] border border-[#39FF14] px-4 py-2 uppercase tracking-wider hover:bg-[#39FF14]/10 transition-colors">
+                            <span>Visit Site</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="mt-5 flex items-center justify-between">
+                    <h3 class="project-card-title text-xl font-bold text-white tracking-tight group-hover:text-[#39FF14] transition-colors">BMI Calculator</h3>
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-slate-400 border border-slate-800 px-2.5 py-1 bg-slate-900/40">Software / Health</span>
+                </div>
+            </div>
+
+            <!-- PROJECT 4: PEKIM'S PORTFOLIO -->
+            <div class="project-card group" data-category="personal-portfolio" data-aos="fade-up" data-aos-delay="300">
+                <div class="project-media-box relative overflow-hidden rounded border border-slate-800 bg-slate-900/50">
+                    <img src="static/images/webp/pekimdev.webp" class="project-media-img w-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Pekim's Portfolio">
+                    <div class="project-media-overlay absolute inset-0 bg-[#050a15]/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <a href="https://portfolio-pekim.vercel.app" class="view-project-link flex items-center gap-2 font-mono text-xs text-[#39FF14] border border-[#39FF14] px-4 py-2 uppercase tracking-wider hover:bg-[#39FF14]/10 transition-colors">
+                            <span>Visit Site</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="mt-5 flex items-center justify-between">
+                    <h3 class="project-card-title text-xl font-bold text-white tracking-tight group-hover:text-[#39FF14] transition-colors">Pekim's Portfolio</h3>
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-slate-400 border border-slate-800 px-2.5 py-1 bg-slate-900/40">Personal Portfolio</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+/* HIGH-INTENSITY ANIMATION KIT */
+@keyframes springPop {
+    0% { transform: scale(0.5); opacity: 0; }
+    70% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes floatAnim {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes pulseWhatsApp {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
+    70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+.animate-spring { animation: springPop 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards; }
+.animate-float { animation: floatAnim 3s ease-in-out infinite; }
+.animate-whatsapp { animation: pulseWhatsApp 2s infinite; }
+
+/* 3D Card Effect */
+.team-card-inner {
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    transform-style: preserve-3d;
+}
+.team-card:hover .team-card-inner {
+    transform: rotateY(10deg) rotateX(5deg) translateY(-10px);
+}

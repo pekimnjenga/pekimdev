@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Virtual Environment
+venv/
+env/
+.venv/
+
+# Environment / Secrets
+.env
+.env.*
+
+# Tailwind CSS standalone binary (do NOT commit — pre-compile CSS instead)
+tailwind
+tailwind.exe
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# VSCode
+.vscode/
+
+# pip-tools
+*.in.bak

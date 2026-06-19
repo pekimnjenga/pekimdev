@@ -1,0 +1,130 @@
+/* Custom Background & Typography Tweak */
+.hero-bg {
+    /* Using a placeholder high-tech image */
+    background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop');
+}
+
+/* Tailwind's tracking-tighter is -0.05em. 
+   For that "Heavy Engineering" look, we need slightly more.
+*/
+.tracking-tighter {
+    letter-spacing: -0.06em;
+}
+
+/* Smooth background appearance */
+.hero-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 5;
+}
+
+
+/* SERVICE ITEM ENTRANCE ANIMATION */
+@keyframes serviceSlideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.service-item {
+    opacity: 0; /* Hidden by default */
+    animation: serviceSlideIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Subtle Hover interaction for the List icons */
+.service-item:hover i {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 8px rgba(0, 98, 255, 0.5));
+}
+
+/* PROJECT CARD SPECIFICS */
+.project-card {
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(0, 98, 255, 0.1);
+}
+
+/* Ensure Swiper uses the full height of the container */
+.swiper-slide {
+    height: auto;
+}
+
+/* Custom Cursor logic if you want to add it later */
+.project-carousel {
+    cursor: grab;
+}
+.project-carousel:active {
+    cursor: grabbing;
+}
+
+/* WHY WORK WITH US - CARD ARCHITECTURE */
+.why-card {
+    position: relative;
+    padding: 3rem 2rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    gap: 1.5rem;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.why-card:hover {
+    background: rgba(0, 98, 255, 0.05);
+    border-color: rgba(0, 98, 255, 0.3);
+    transform: translateY(-5px);
+}
+
+.why-icon-box {
+    min-width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 98, 255, 0.1);
+    border-radius: 4px; /* Industrial Sharpness */
+    transition: all 0.5s ease;
+}
+
+.why-card:hover .why-icon-box {
+    background: #0062ff;
+}
+
+.why-card:hover .why-icon-box i {
+    color: white;
+    transform: scale(1.1);
+}
+
+.card-number {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.1);
+    letter-spacing: 2px;
+}
+
+/* Subtle Glow Effect on Hover */
+.why-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    box-shadow: 0 0 40px rgba(0, 98, 255, 0.15);
+    transition: opacity 0.5s ease;
+}
+
+.why-card:hover::after {
+    opacity: 1;
+}

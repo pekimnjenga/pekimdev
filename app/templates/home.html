@@ -1,0 +1,604 @@
+{% extends "base.html" %}
+
+{% block preloads %}
+<!-- Preload the first slide image for immediate paint -->
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072"> {# Unsplash images are already optimized, no local WebP needed #}
+{% endblock %}
+
+{% block content %}
+
+<section class="relative h-[70vh] min-h-[550px] bg-[#050a15] overflow-hidden text-white flex items-center justify-center">
+    
+    <div class="hero-slide absolute inset-0 w-full h-full opacity-100 transition-opacity duration-1000 ease-in-out z-10 flex items-center justify-center">
+        <div class="absolute inset-0 z-0">
+            <img src="{{ url_for('static', filename='images/webp/image3.webp') }}" class="w-full h-full object-cover object-center lg:scale-105 transition-transform lg:duration-[5000ms] ease-linear slide-bg" alt="Smart Tech">
+            <div class="absolute inset-0 bg-[#050a15]/65"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-[#050a15]/30 via-transparent to-[#050a15]/50"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-20 text-center">
+            <div class="max-w-4xl mx-auto slide-content translate-y-0 opacity-100 transition-all duration-700 delay-300 flex flex-col items-center">
+                <div class="flex items-center gap-3 mb-5">
+                    <div class="h-[1px] w-6 bg-[#39FF14]/60"></div>
+                    <span class="font-mono text-[#39FF14] tracking-[0.5em] uppercase text-[10px] font-bold">Innovation First</span>
+                    <div class="h-[1px] w-6 bg-[#39FF14]/60"></div>
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight leading-[1.1] mb-6">
+                    Smart Websites For <br class="hidden md:inline"><span class="text-[#39FF14] drop-shadow-[0_0_15px_rgba(57,255,20,0.3)]">Modern Businesses</span>
+                </h1>
+                <p class="text-slate-200 text-sm md:text-base font-light max-w-xl leading-relaxed border-t border-b border-[#39FF14]/20 py-4 px-6 mb-8">
+                    We engineer high-performance, responsive web platforms that capture attention, optimize operations, and turn casual visitors into loyal customers.
+                </p>
+                <a href="/contact" class="inline-flex items-center gap-2 px-8 py-3.5 bg-transparent border border-[#39FF14] text-[#39FF14] font-mono text-xs uppercase tracking-widest font-bold rounded-sm transition-all duration-300 hover:bg-[#39FF14] hover:text-[#050a15] hover:shadow-[0_0_25px_rgba(57,255,20,0.4)] hover:-translate-y-0.5 group">
+                    Get a Free Quotation
+                    <i class="fa-solid fa-arrow-right text-xs transition-transform duration-300 group-hover:translate-x-1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero-slide absolute inset-0 w-full h-full opacity-0 pointer-events-none transition-opacity duration-1000 ease-in-out z-10 flex items-center justify-center">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80" class="w-full h-full object-cover object-center slide-bg" alt="Digital Growth">
+            <div class="absolute inset-0 bg-[#050a15]/65"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-[#050a15]/30 via-transparent to-[#050a15]/50"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-20 text-center">
+            <div class="max-w-4xl mx-auto slide-content translate-y-4 opacity-0 transition-all duration-700 flex flex-col items-center">
+                <div class="flex items-center gap-3 mb-5">
+                    <div class="h-[1px] w-6 bg-[#39FF14]/60"></div>
+                    <span class="font-mono text-[#39FF14] tracking-[0.5em] uppercase text-[10px] font-bold">Digital Scale</span>
+                    <div class="h-[1px] w-6 bg-[#39FF14]/60"></div>
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight leading-[1.1] mb-6">
+                    Let's Scale Your <br class="hidden md:inline"><span class="text-[#39FF14] drop-shadow-[0_0_15px_rgba(57,255,20,0.3)]">Digital Presence</span>
+                </h1>
+                <p class="text-slate-200 text-sm md:text-base font-light max-w-xl leading-relaxed border-t border-b border-[#39FF14]/20 py-4 px-6 mb-8">
+                    From concept to deployment, we build custom web solutions designed to break barriers, automate your workflows, and expand your market reach.
+                </p>
+                <a href="/contact" class="inline-flex items-center gap-2 px-8 py-3.5 bg-transparent border border-[#39FF14] text-[#39FF14] font-mono text-xs uppercase tracking-widest font-bold rounded-sm transition-all duration-300 hover:bg-[#39FF14] hover:text-[#050a15] hover:shadow-[0_0_25px_rgba(57,255,20,0.4)] hover:-translate-y-0.5 group">
+                    Get a Free Quotation
+                    <i class="fa-solid fa-arrow-right text-xs transition-transform duration-300 group-hover:translate-x-1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero-slide absolute inset-0 w-full h-full opacity-0 pointer-events-none transition-opacity duration-1000 ease-in-out z-10 flex items-center justify-center">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426" class="w-full h-full object-cover object-center slide-bg" alt="Smart Solutions">
+            <div class="absolute inset-0 bg-[#050a15]/65"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-[#050a15]/30 via-transparent to-[#050a15]/50"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-20 text-center">
+            <div class="max-w-4xl mx-auto slide-content translate-y-4 opacity-0 transition-all duration-700 flex flex-col items-center">
+                <div class="flex items-center gap-3 mb-5">
+                    <div class="h-[1px] w-6 bg-[#39FF14]/60"></div>
+                    <span class="font-mono text-[#39FF14] tracking-[0.5em] uppercase text-[10px] font-bold">Mastery & Architecture</span>
+                    <div class="h-[1px] w-6 bg-[#39FF14]/60"></div>
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight leading-[1.1] mb-6">
+                    Intelligent Tech, <br class="hidden md:inline"><span class="text-[#39FF14] drop-shadow-[0_0_15px_rgba(57,255,20,0.3)]">Seamless Results</span>
+                </h1>
+                <p class="text-slate-200 text-sm md:text-base font-light max-w-xl leading-relaxed border-t border-b border-[#39FF14]/20 py-4 px-6 mb-8">
+                    Skip the generic templates. Get a tailor-made digital engine built with industry-standard architecture, bulletproof security, and elite speed.
+                </p>
+                <a href="/contact" class="inline-flex items-center gap-2 px-8 py-3.5 bg-transparent border border-[#39FF14] text-[#39FF14] font-mono text-xs uppercase tracking-widest font-bold rounded-sm transition-all duration-300 hover:bg-[#39FF14] hover:text-[#050a15] hover:shadow-[0_0_25px_rgba(57,255,20,0.4)] hover:-translate-y-0.5 group">
+                    Get a Free Quotation
+                    <i class="fa-solid fa-arrow-right text-xs transition-transform duration-300 group-hover:translate-x-1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<script>
+        window.startHeroSlider = function() {
+        const slides = document.querySelectorAll('.hero-slide');
+        if (!slides.length) return;
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+        const transitionSpeed = 6000;
+
+        function switchSlide() {
+            let nextSlideIndex = (currentSlide + 1) % totalSlides;
+
+            slides[currentSlide].classList.replace('opacity-100', 'opacity-0');
+            slides[currentSlide].classList.add('pointer-events-none');
+            
+            const currentText = slides[currentSlide].querySelector('.slide-content');
+            currentText.classList.replace('translate-y-0', 'translate-y-4');
+            currentText.classList.replace('opacity-100', 'opacity-0');
+            
+            const currentImg = slides[currentSlide].querySelector('.slide-bg');
+            if(currentImg) currentImg.classList.remove('scale-105', 'duration-[5000ms]');
+
+            slides[nextSlideIndex].classList.replace('opacity-0', 'opacity-100');
+            slides[nextSlideIndex].classList.remove('pointer-events-none');
+            
+            const nextText = slides[nextSlideIndex].querySelector('.slide-content');
+            setTimeout(() => {
+                nextText.classList.replace('translate-y-4', 'translate-y-0');
+                nextText.classList.replace('opacity-0', 'opacity-100');
+            }, 300);
+
+            const nextImg = slides[nextSlideIndex].querySelector('.slide-bg');
+            if(nextImg) {
+                nextImg.classList.add('scale-105', 'duration-[5000ms]');
+            }
+
+            currentSlide = nextSlideIndex;
+        }
+
+        window.switchSlideInterval = setInterval(switchSlide, transitionSpeed);
+    };
+
+    // Initialize hero slider on page load
+    window.startHeroSlider();
+</script>
+
+
+<!-- SECTION: COMPACT SERVICES MATRIX (FLIPPED SPLIT) -->
+<section id="services" class="relative flex flex-col lg:flex-row overflow-hidden border-y border-slate-100 bg-white">
+    
+    <!-- 
+      LEFT SIDE: Services List 
+      - Mobile: Uses absolute pseudo-elements to layer image17.jpg seamlessly as a dark backdrop.
+      - Desktop (lg:): Normal white grid canvas.
+    -->
+    <div class="w-full lg:w-1/2 p-8 md:py-16 lg:py-16 lg:px-20 flex flex-col justify-center relative bg-white lg:bg-white" data-aos="fade-right" data-aos-duration="1000"> {# No changes to image17.jpg in style attribute, as it's a CSS background #}
+        
+        <!-- ================================================================= -->
+        <!-- MOBILE ONLY BACKGROUND IMMERSION (image17.jpg as backdrop)       -->
+        <!-- ================================================================= -->
+        <!-- Renders only below 'lg' breakpoint to avoid stacking asset items vertically -->
+        <div class="absolute inset-0 block lg:hidden bg-cover bg-center bg-no-repeat pointer-events-none" 
+             style="background-image: url('{{ url_for('static', filename='images/webp/image7.webp') }}');">
+            <!-- Matrix Dark Overlay Shield for Premium Dark Mode Contrast on Mobile -->
+            <div class="absolute inset-0 bg-[#050a15]/90 backdrop-blur-[1px]"></div>
+            <div class="absolute inset-0 bg-dot-grid opacity-10"></div>
+        </div>
+
+        <!-- Accent Detail Backdrop Lines (Maintained cleanly for Desktop variant views) -->
+        <div class="absolute inset-0 hidden lg:block bg-[linear-gradient(to_right,#f1f5f9_1px,transparent_1px),linear-gradient(to_bottom,#f1f5f9_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-60 pointer-events-none"></div>
+
+        <!-- MAIN SERVICES CONTENT INTERFACE -->
+        <div class="relative z-10">
+            <!-- Header Metadata Index Meta -->
+            <div class="flex items-center gap-4 mb-6">
+                <div class="h-px w-12 bg-[#050a15] lg:bg-[#050a15] bg-white"></div>
+                <span class="font-mono text-[10px] uppercase tracking-[0.4em] text-slate-400 lg:text-slate-500 font-bold">Capabilities // 02</span>
+            </div>
+
+            <!-- Main Section Heading with Green "Offered" Title -->
+            <h2 class="text-4xl md:text-5xl font-black text-white lg:text-[#050a15] uppercase tracking-tighter mb-10">
+                Services <span class="text-[#39FF14] drop-shadow-[0_0_10px_rgba(57,255,20,0.2)]">Offered</span>
+            </h2>
+
+            <!-- Jinja Loop Template Block List Implementation -->
+            <ul class="space-y-6">
+                {% set service_list = [
+                    ('Custom Website Design', 'fa-laptop-code'),
+                    ('Custom E-commerce Systems', 'fa-cart-shopping'),
+                    ('Personal Brand Platforms', 'fa-user-tie'),
+                    ('Corporate Digital Infrastructure', 'fa-server'),
+                    ('SEO Optimization & Analytics', 'fa-chart-line'),
+                    ('Website Maintenance & Support', 'fa-gears')
+                ] %}
+
+                {% for title, icon in service_list %}
+                <li class="service-item flex items-center gap-5 group" style="animation-delay: {{ loop.index0 * 0.12 }}s;">
+                    <!-- Square Icon Wrapper -->
+                    <div class="relative w-11 h-11 flex items-center justify-center border border-white/10 lg:border-slate-200 bg-white/[0.03] lg:bg-slate-50 shrink-0 group-hover:border-[#39FF14] lg:group-hover:border-[#050a15] lg:group-hover:bg-[#050a15] transition-all duration-300">
+                        <i class="fa-solid {{ icon }} text-white lg:text-[#050a15] text-base group-hover:text-[#39FF14] transition-colors duration-300"></i>
+                        <!-- Corner Crosshair Accent Feature -->
+                        <div class="absolute -top-1 -left-1 w-2 h-2 border-t border-l border-[#39FF14] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    
+                    <!-- Text Block with Underline Accent Extensions -->
+                    <div class="flex flex-col">
+                        <span class="text-slate-200 lg:text-[#050a15] text-base font-bold tracking-tight group-hover:text-[#39FF14] lg:group-hover:text-slate-600 transition-colors duration-300 cursor-default">
+                            {{ title }}
+                        </span>
+                        <div class="h-px w-0 bg-[#39FF14] group-hover:w-full transition-all duration-500 mt-1"></div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- RIGHT SIDE: DESKTOP-ONLY IMAGE presentation LAYER                 -->
+    <!-- ================================================================= -->
+    <!-- Hidden entirely on mobile device viewports (`hidden lg:flex`) to avoid long scroll stacks -->
+    <div class="hidden lg:flex lg:w-1/2 bg-[#050a15] items-center justify-center p-8 lg:p-16 relative border-l border-white/5">
+        <!-- Matrix Layer Backdrop Details -->
+        <div class="absolute inset-0 bg-dot-grid opacity-10 pointer-events-none"></div>
+        <!-- Cyber Gradient Flare -->
+        <div class="absolute w-72 h-72 bg-[#39FF14]/10 rounded-full blur-[90px] pointer-events-none"></div>
+
+        <div class="absolute top-8 right-8 font-mono text-[9px] text-white/20 uppercase tracking-widest hidden md:block">
+            Visual_Engine // Active
+        </div>
+
+        <!-- Styled Framing Container -->
+        <div class="relative w-full max-w-md aspect-[4/5] bg-white/[0.01] overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.6)] border border-white/5 group" data-aos="fade-left" data-aos-duration="1000">
+            <img src="{{ url_for('static', filename='images/webp/image17.webp') }}" 
+                 alt="Digital Infrastructure Engine"
+                 class="w-full h-full object-contain p-4 transition-all duration-700 ease-out group-hover:scale-102">
+            
+            <!-- Neon Green Crosshair Boundary Overlay Decorators -->
+            <div class="absolute top-4 left-4 w-6 h-6 border-t-2 border-l-2 border-[#39FF14] drop-shadow-[0_0_8px_#39FF14]"></div>
+            <div class="absolute bottom-4 right-4 w-6 h-6 border-b-2 border-r-2 border-[#39FF14] drop-shadow-[0_0_8px_#39FF14]"></div>
+        </div>
+        
+        <div class="absolute bottom-8 left-8 font-mono text-[10px] text-white/20 rotate-90 origin-left tracking-wider">
+            PEKIM_DEV_ASSET_L02
+        </div>
+    </div>
+</section>
+
+
+
+<section id="industries" class="relative bg-white border-b border-slate-100">
+
+    <div class="hidden lg:flex flex-row items-stretch min-h-[650px]">
+        
+        <div class="w-1/2 bg-white p-20 relative flex items-center justify-center" data-aos="fade-right" data-aos-duration="1000">
+            <div class="absolute inset-0 bg-[linear-gradient(to_right,#f1f5f9_1px,transparent_1px),linear-gradient(to_bottom,#f1f5f9_1px,transparent_1px)] bg-[size:3rem_3rem] opacity-40 pointer-events-none"></div>
+            <div class="absolute w-72 h-72 bg-[#39FF14]/5 rounded-full blur-[90px] pointer-events-none"></div>
+
+            <div class="absolute top-8 left-8 font-mono text-[9px] text-slate-400 uppercase tracking-widest">
+                Visual_Engine // Active
+            </div>
+
+            <div class="relative w-full max-w-md h-full flex flex-col justify-center z-10">
+                <div class="relative w-full aspect-[16/10] bg-slate-50 border border-slate-100 rounded-sm overflow-hidden mb-8">
+                    <img id="industry-display-img" src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=1000" class="w-full h-full object-contain p-2 transition-all duration-500 ease-out" alt="Industry Preview">
+                    <div class="absolute top-2 left-2 w-4 h-4 border-t border-l border-[#39FF14]/50"></div>
+                    <div class="absolute bottom-2 right-2 w-4 h-4 border-b border-r border-[#39FF14]/50"></div>
+                </div>
+
+                <div class="min-h-[140px]">
+                    <h4 id="industry-display-title" class="text-xl font-black text-[#050a15] uppercase tracking-wider mb-3 font-mono flex items-center gap-2">
+                        <span class="text-[#39FF14]">//</span> Education & Academics
+                    </h4>
+                    <p id="industry-display-desc" class="text-slate-600 text-sm leading-relaxed font-light transition-opacity duration-300">
+                        We build organized, user-friendly platforms that simplify enrollment, streamline school communications, and make digital learning resources easily accessible for students and teachers.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-1/2 bg-white p-20 flex flex-col justify-center relative border-l border-slate-100 z-20" data-aos="fade-left" data-aos-duration="1000">
+            <div class="absolute inset-0 bg-[linear-gradient(to_right,#f1f5f9_1px,transparent_1px),linear-gradient(to_bottom,#f1f5f9_1px,transparent_1px)] bg-[size:3rem_3rem] opacity-40 pointer-events-none"></div>
+
+            <div class="relative z-10">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="h-px w-12 bg-[#050a15]"></div>
+                    <span class="font-mono text-[10px] uppercase tracking-[0.4em] text-slate-500 font-bold">Target Sectors // 03</span>
+                </div>
+
+                <h2 class="text-4xl md:text-5xl font-black text-[#050a15] uppercase tracking-tighter mb-12">
+                    Industries We <span class="text-[#39FF14] drop-shadow-[0_0_10px_rgba(57,255,20,0.2)]">Serve</span>
+                </h2>
+
+                <div class="grid grid-cols-2 gap-3">
+                    <button class="industry-trigger group w-full text-left p-4 border border-slate-100 bg-slate-50/50 hover:bg-[#050a15] hover:border-[#050a15] transition-all duration-300 rounded-sm flex items-center justify-between active" data-index="0">
+                        <span class="text-sm font-bold text-[#050a15] group-hover:text-white uppercase tracking-wide transition-colors">Education & Academics</span>
+                        <i class="fa-solid fa-chevron-right text-xs text-slate-300 group-hover:text-[#39FF14] transition-colors"></i>
+                    </button>
+                    <button class="industry-trigger group w-full text-left p-4 border border-slate-100 bg-slate-50/50 hover:bg-[#050a15] hover:border-[#050a15] transition-all duration-300 rounded-sm flex items-center justify-between" data-index="1">
+                        <span class="text-sm font-bold text-[#050a15] group-hover:text-white uppercase tracking-wide transition-colors">Tech Firms & SaaS</span>
+                        <i class="fa-solid fa-chevron-right text-xs text-slate-300 group-hover:text-[#39FF14] transition-colors"></i>
+                    </button>
+                    <button class="industry-trigger group w-full text-left p-4 border border-slate-100 bg-slate-50/50 hover:bg-[#050a15] hover:border-[#050a15] transition-all duration-300 rounded-sm flex items-center justify-between" data-index="2">
+                        <span class="text-sm font-bold text-[#050a15] group-hover:text-white uppercase tracking-wide transition-colors">Real Estate & Housing</span>
+                        <i class="fa-solid fa-chevron-right text-xs text-slate-300 group-hover:text-[#39FF14] transition-colors"></i>
+                    </button>
+                    <button class="industry-trigger group w-full text-left p-4 border border-slate-100 bg-slate-50/50 hover:bg-[#050a15] hover:border-[#050a15] transition-all duration-300 rounded-sm flex items-center justify-between" data-index="3">
+                        <span class="text-sm font-bold text-[#050a15] group-hover:text-white uppercase tracking-wide transition-colors">E-Commerce Retail</span>
+                        <i class="fa-solid fa-chevron-right text-xs text-slate-300 group-hover:text-[#39FF14] transition-colors"></i>
+                    </button>
+                    <button class="industry-trigger group w-full text-left p-4 border border-slate-100 bg-slate-50/50 hover:bg-[#050a15] hover:border-[#050a15] transition-all duration-300 rounded-sm flex items-center justify-between" data-index="4">
+                        <span class="text-sm font-bold text-[#050a15] group-hover:text-white uppercase tracking-wide transition-colors">Corporate & Finance</span>
+                        <i class="fa-solid fa-chevron-right text-xs text-slate-300 group-hover:text-[#39FF14] transition-colors"></i>
+                    </button>
+                    <button class="industry-trigger group w-full text-left p-4 border border-slate-100 bg-slate-50/50 hover:bg-[#050a15] hover:border-[#050a15] transition-all duration-300 rounded-sm flex items-center justify-between" data-index="5">
+                        <span class="text-sm font-bold text-[#050a15] group-hover:text-white uppercase tracking-wide transition-colors">Logistics & Freight</span>
+                        <i class="fa-solid fa-chevron-right text-xs text-slate-300 group-hover:text-[#39FF14] transition-colors"></i>
+                    </button>
+                    <button class="industry-trigger group w-full text-left p-4 border border-slate-100 bg-slate-50/50 hover:bg-[#050a15] hover:border-[#050a15] transition-all duration-300 rounded-sm flex items-center justify-between" data-index="6">
+                        <span class="text-sm font-bold text-[#050a15] group-hover:text-white uppercase tracking-wide transition-colors">Beauty & Cosmetics</span>
+                        <i class="fa-solid fa-chevron-right text-xs text-slate-300 group-hover:text-[#39FF14] transition-colors"></i>
+                    </button>
+                    <button class="industry-trigger group w-full text-left p-4 border border-slate-100 bg-slate-50/50 hover:bg-[#050a15] hover:border-[#050a15] transition-all duration-300 rounded-sm flex items-center justify-between" data-index="7">
+                        <span class="text-sm font-bold text-[#050a15] group-hover:text-white uppercase tracking-wide transition-colors">Agribusiness & Agritech</span>
+                        <i class="fa-solid fa-chevron-right text-xs text-slate-300 group-hover:text-[#39FF14] transition-colors"></i>
+                    </button>
+                    <button class="industry-trigger group w-full text-left p-4 border border-slate-100 bg-slate-50/50 hover:bg-[#050a15] hover:border-[#050a15] transition-all duration-300 rounded-sm flex items-center justify-between" data-index="8">
+                        <span class="text-sm font-bold text-[#050a15] group-hover:text-white uppercase tracking-wide transition-colors">Art, Film & Media</span>
+                        <i class="fa-solid fa-chevron-right text-xs text-slate-300 group-hover:text-[#39FF14] transition-colors"></i>
+                    </button>
+                    <button class="industry-trigger group w-full text-left p-4 border border-slate-100 bg-slate-50/50 hover:bg-[#050a15] hover:border-[#050a15] transition-all duration-300 rounded-sm flex items-center justify-between" data-index="9">
+                        <span class="text-sm font-bold text-[#050a15] group-hover:text-white uppercase tracking-wide transition-colors">Hospitality & Resorts</span>
+                        <i class="fa-solid fa-chevron-right text-xs text-slate-300 group-hover:text-[#39FF14] transition-colors"></i>
+                    </button>
+                    <button class="industry-trigger group w-full text-left p-4 border border-slate-100 bg-slate-50/50 hover:bg-[#050a15] hover:border-[#050a15] transition-all duration-300 rounded-sm flex items-center justify-between col-span-2" data-index="10">
+                        <span class="text-sm font-bold text-[#050a15] group-hover:text-white uppercase tracking-wide transition-colors">Healthcare & Medical</span>
+                        <i class="fa-solid fa-chevron-right text-xs text-slate-300 group-hover:text-[#39FF14] transition-colors"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="block lg:hidden bg-white p-6 md:p-12 relative border-t border-slate-100">
+        <div class="absolute inset-0 bg-[linear-gradient(to_right,#f1f5f9_1px,transparent_1px),linear-gradient(to_bottom,#f1f5f9_1px,transparent_1px)] bg-[size:3rem_3rem] opacity-40 pointer-events-none"></div>
+        
+        <div class="relative z-10 mb-10">
+            <div class="flex items-center gap-3 mb-3">
+                <div class="h-px w-10 bg-[#050a15]"></div>
+                <span class="font-mono text-[9px] uppercase tracking-[0.3em] text-slate-500 font-bold">Target Sectors // 03</span>
+            </div>
+            <h2 class="text-3xl font-black text-[#050a15] uppercase tracking-tight">
+                Industries We <span class="text-[#39FF14] drop-shadow-[0_0_10px_rgba(57,255,20,0.2)]">Serve</span>
+            </h2>
+        </div>
+
+        <div id="mobile-accordion-wrapper" class="space-y-3 relative z-10 font-mono">
+            </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const industryData = [
+            {
+                title: "Education & Academics",
+                desc: "We build organized, user-friendly platforms that simplify enrollment, streamline school communications, and make digital learning resources easily accessible for students and teachers.",
+                img: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=1000"
+            },
+            {
+                title: "Tech Firms & SaaS",
+                desc: "We engineer lightning-fast marketing websites and clean digital layouts that clearly explain your product features and convert casual visitors into active app users.",
+                img: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000"
+            },
+            {
+                title: "Real Estate & Housing",
+                desc: "We design premium property showcases equipped with intuitive search tools and interactive features, helping agents capture leads and present listings beautifully.",
+                img: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1000"
+            },
+            {
+                title: "E-Commerce Retail",
+                desc: "We develop high-performance online storefronts with seamless product navigation and secure checkout paths designed to maximize your digital sales.",
+                img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000"
+            },
+            {
+                title: "Corporate & Finance",
+                desc: "We create polished, high-credibility digital platforms that protect sensitive client data while presenting your firm's professional authority to the market.",
+                img: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1000"
+            },
+            {
+                title: "Logistics & Freight",
+                desc: "We build clear, structured tracking interfaces and booking portals that help your customers manage shipments and view logistics data effortlessly.",
+                img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1000"
+            },
+            {
+                title: "Beauty & Cosmetics",
+                desc: "We design highly aesthetic, visually rich digital spaces that reflect your brand’s identity, tell your story, and turn product imagery into customer desire.",
+                img: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1000"
+            },
+            {
+                title: "Agribusiness & Agritech",
+                desc: "We develop practical B2B wholesale directories and distribution network platforms that help modern farming operations connect with suppliers and buyers efficiently.",
+                img: "https://images.unsplash.com/photo-1593113598332-cd288d649433?q=80&w=1000"
+            },
+            {
+                title: "Art, Film & Media",
+                desc: "We architect bold, high-fidelity portfolio websites optimized for rich media, allowing creative studios to stream and display their work without quality loss.",
+                img: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1000"
+            },
+            {
+                title: "Hospitality & Resorts",
+                desc: "We craft elegant online booking and reservation experiences that mirror the premium luxury of your physical spaces to drive direct guest reservations.",
+                img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1000"
+            },
+            {
+                title: "Healthcare & Medical",
+                desc: "We create clean, highly accessible informational portals that allow patients to securely schedule appointments, find services, and access care instructions.",
+                img: "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=1000"
+            }
+        ];
+
+        // --------------------------------------------------
+        // A. DESKTOP INTERACTIVITY PIPELINE
+        // --------------------------------------------------
+        const triggers = document.querySelectorAll('.industry-trigger');
+        const displayTitle = document.getElementById('industry-display-title');
+        const displayDesc = document.getElementById('industry-display-desc');
+        const displayImg = document.getElementById('industry-display-img');
+
+        // Dynamic Active Highlight Styles Injection
+        const style = document.createElement('style');
+        style.innerHTML = `
+            .industry-trigger.active { background-color: #050a15 !important; border-color: #050a15 !important; }
+            .industry-trigger.active span { color: white !important; }
+            .industry-trigger.active i { color: #39FF14 !important; }
+        `;
+        document.head.appendChild(style);
+
+        if(triggers.length > 0) {
+            triggers[0].classList.add('active');
+        }
+
+        function updateDesktopDisplay(index) {
+            triggers.forEach(t => t.classList.remove('active'));
+            triggers[index].classList.add('active');
+
+            displayTitle.style.opacity = '0';
+            displayDesc.style.opacity = '0';
+            displayImg.style.opacity = '0.3';
+
+            setTimeout(() => {
+                displayTitle.innerHTML = `<span class="text-[#39FF14]">//</span> ${industryData[index].title}`;
+                displayDesc.textContent = industryData[index].desc;
+                displayImg.src = industryData[index].img;
+
+                displayTitle.style.opacity = '1';
+                displayDesc.style.opacity = '1';
+                displayImg.style.opacity = '1';
+            }, 200);
+        }
+
+        triggers.forEach(trigger => {
+            trigger.addEventListener('mouseenter', function() {
+                updateDesktopDisplay(parseInt(this.getAttribute('data-index')));
+            });
+            trigger.addEventListener('click', function() {
+                updateDesktopDisplay(parseInt(this.getAttribute('data-index')));
+            });
+        });
+
+        // --------------------------------------------------
+        // B. MOBILE ACCORDION GENERATION ENGINE
+        // --------------------------------------------------
+        const mobileWrapper = document.getElementById('mobile-accordion-wrapper');
+        
+        industryData.forEach((item, index) => {
+            const indexStr = String(index + 1).padStart(2, '0');
+            const cardHtml = `
+                <div class="border border-slate-100 bg-slate-50/50 rounded-sm transition-all duration-300" id="m-node-${index}">
+                    <button onclick="handleMobileToggle(${index})" class="w-full flex items-center justify-between p-4 text-left group">
+                        <div class="flex items-center gap-3">
+                            <span class="text-[10px] text-slate-400">// ${indexStr}</span>
+                            <h3 class="text-sm font-bold tracking-wide text-[#050a15] uppercase">${item.title}</h3>
+                        </div>
+                        <span id="m-icon-${index}" class="text-[#39FF14] font-black text-lg transition-transform duration-300">+</span>
+                    </button>
+                    
+                    <div id="m-body-${index}" class="hidden px-4 pb-5 border-t border-slate-100 pt-4 space-y-4">
+                        <div class="relative w-full aspect-[16/10] bg-slate-100 border border-slate-200 rounded-sm overflow-hidden">
+                            <img src="${item.img}" class="w-full h-full object-contain p-2" alt="${item.title}">
+                            <div class="absolute top-2 left-2 w-3 h-3 border-t border-l border-[#39FF14]/30"></div>
+                            <div class="absolute bottom-2 right-2 w-3 h-3 border-b border-r border-[#39FF14]/30"></div>
+                        </div>
+                        <p class="font-sans text-xs text-slate-600 leading-relaxed font-light">
+                            ${item.desc}
+                        </p>
+                        <div class="flex justify-end pt-1">
+                            <button onclick="handleMobileToggle(${index})" class="text-[9px] text-[#39FF14] uppercase tracking-widest bg-[#39FF14]/5 border border-[#39FF14]/20 px-2.5 py-1 rounded-sm">
+                                [ Collapse_Panel ]
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            mobileWrapper.insertAdjacentHTML('beforeend', cardHtml);
+        });
+    });
+
+    // Global toggle controller for generated elements
+    function handleMobileToggle(id) {
+        const body = document.getElementById(`m-body-${id}`);
+        const icon = document.getElementById(`m-icon-${id}`);
+        const wrapper = document.getElementById(`m-node-${id}`);
+        
+        if (body.classList.contains('hidden')) {
+            body.classList.remove('hidden');
+            icon.style.transform = 'rotate(45deg)';
+            wrapper.classList.add('border-[#39FF14]/20', 'bg-slate-100');
+        } else {
+            body.classList.add('hidden');
+            icon.style.transform = 'rotate(0deg)';
+            wrapper.classList.remove('border-[#39FF14]/20', 'bg-slate-100');
+        }
+    }
+</script>
+
+
+<!-- SECTION: CONTACT US (PREMIUM ULTRA-MODERN HUD) -->
+<section class="relative py-48 bg-fixed bg-cover bg-center overflow-hidden" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070');">
+    <!-- Deep Backdrop Overlay with slight blur for text readability -->
+    <div class="absolute inset-0 bg-black/85 backdrop-blur-[3px]"></div>
+    
+    <!-- Decorative Tech Ambient Glows -->
+    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-[#39FF14]/5 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-[120px] pointer-events-none"></div>
+
+    <div class="container mx-auto px-6 relative z-10 text-center">
+        <!-- Main Heading (Reduced to match Hero Title dimensions) -->
+        <h2 class="text-4xl md:text-6xl font-black text-white mb-6 uppercase tracking-tighter leading-tight" data-aos="zoom-out-up" data-aos-duration="1000">
+            Ready for a Robust <br> 
+            <span class="text-[#39FF14] drop-shadow-[0_0_20px_rgba(57,255,20,0.4)]">Digital Presence?</span>
+        </h2>
+        
+        <!-- Tech Console Subheading -->
+        <p class="text-slate-400 font-mono tracking-[0.25em] mb-12 uppercase text-xs md:text-sm max-w-2xl mx-auto flex items-center justify-center gap-3" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+            <span class="text-[#39FF14] animate-pulse">//</span> Reach out to us through any channel below
+        </p>
+        
+        <!-- CENTRALIZED HUD HUB CONTAINER -->
+        <div class="max-w-3xl mx-auto flex flex-col gap-4">
+            
+            <!-- ROW 1: SPLIT INSTANT COMMUNICATION BOARD -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4" data-aos="fade-up" data-aos-delay="400" data-aos-duration="900">
+                
+                <!-- WHATSAPP COMMUNICATION CARD -->
+                <a href="https://wa.me/254797933409" target="_blank" rel="noopener noreferrer" class="relative group block p-6 bg-white/[0.02] hover:bg-white/[0.05] border border-white/10 hover:border-[#25D366]/40 transition-all duration-300 rounded-sm overflow-hidden text-left">
+                    <!-- Tech Corner Accents -->
+                    <div class="absolute top-0 left-0 w-2 h-2 border-t border-l border-white/20 group-hover:border-[#25D366]"></div>
+                    <div class="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-white/20 group-hover:border-[#25D366]"></div>
+                    
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="block font-mono text-[10px] text-slate-500 uppercase tracking-widest mb-1">Instant Chat // 01</span>
+                            <h3 class="text-xl font-bold text-white uppercase tracking-wide group-hover:text-[#25D366] transition-colors">WhatsApp Us</h3>
+                        </div>
+                        <div class="w-12 h-12 rounded-sm bg-[#25D366]/10 flex items-center justify-center text-[#25D366] group-hover:bg-[#25D366] group-hover:text-white transition-all duration-300 shadow-[0_0_15px_rgba(37,211,102,0.1)] group-hover:shadow-[0_0_20px_rgba(37,211,102,0.4)]">
+                            <i class="fab fa-whatsapp text-xl group-hover:rotate-12 transition-transform"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- PHONE DIRECT LINE CARD -->
+                <a href="tel:+254797933409" class="relative group block p-6 bg-white/[0.02] hover:bg-white/[0.05] border border-white/10 hover:border-blue-500/40 transition-all duration-300 rounded-sm overflow-hidden text-left">
+                    <!-- Tech Corner Accents -->
+                    <div class="absolute top-0 left-0 w-2 h-2 border-t border-l border-white/20 group-hover:border-blue-400"></div>
+                    <div class="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-white/20 group-hover:border-blue-400"></div>
+                    
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="block font-mono text-[10px] text-slate-500 uppercase tracking-widest mb-1">Voice Protocol // 02</span>
+                            <h3 class="text-xl font-bold text-white uppercase tracking-wide group-hover:text-blue-400 transition-colors">Call Directly</h3>
+                        </div>
+                        <div class="w-12 h-12 rounded-sm bg-blue-500/10 flex items-center justify-center text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300 shadow-[0_0_15px_rgba(59,130,246,0.1)] group-hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]">
+                            <i class="fa-solid fa-phone text-base group-hover:animate-pulse"></i>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+
+            <!-- ROW 2: ANCHOR ACTION FOR PROJECT BRIEFING FORM -->
+            <div data-aos="fade-up" data-aos-delay="600" data-aos-duration="900">
+                <a href="/contact" class="relative group w-full flex items-center justify-between p-5 bg-[#39FF14] text-[#050a15] rounded-sm font-black text-lg tracking-wider uppercase transition-all duration-300 overflow-hidden shadow-[0_0_30px_rgba(57,255,20,0.2)] hover:shadow-[0_0_40px_rgba(57,255,20,0.45)] hover:scale-[1.01]">
+                    <!-- Button Slide Glare Effect -->
+                    <div class="absolute inset-0 w-1/2 h-full bg-white/20 skew-x-[-25deg] -translate-x-full group-hover:translate-x-[300%] transition-transform duration-1000 ease-out pointer-events-none"></div>
+                    
+                    <span class="flex items-center gap-3">
+                        <i class="fa-solid fa-envelope-open-text text-xl"></i>
+                        Reach Out to Us via our Contact Form
+                    </span>
+                    
+                    <div class="flex items-center gap-2 font-mono text-xs font-bold tracking-normal bg-[#050a15]/10 px-3 py-1 rounded-sm">
+                         <i class="fa-solid fa-arrow-right ml-1 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+{% endblock %}

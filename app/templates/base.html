@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PEKIMdev | Professional Engineering</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght=300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=400;700;900&family=Space+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Page-Specific Image Preloads for First Visit Speed -->
+    {% block preloads %}{% endblock %}
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/services.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/input.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/projects.css') }}">
+    
+    <style>
+        :root {
+            --neon: #39FF14; /* Adjusted to your brand green */
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --silver: #a5a5a5;
+            --dark-bg: #050a15; /* Maintained the coordinated deep blue layout background */
+            --transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        /* --- Progress Bar --- */
+        /* Custom Neon Progress Bar */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--neon);
+            box-shadow: 0 0 10px var(--neon);
+            z-index: 9999;
+            width: 0%;
+            transition: width 0.3s ease;
+            opacity: 1;
+            transform: scaleX(1);
+        }
+        .progress-bar.hidden {
+            opacity: 0;
+            transform: scaleX(0);
+            transition: opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            font-family: 'Poppins', sans-serif;
+            color: white;
+        }
+
+        /* --- Navbar & Logo Specifics --- */
+        .custom-navbar {
+            background: rgba(5, 10, 21, 0.55); /* Coordinated background alpha mask */
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+            z-index: 1000;
+        }
+
+        .brand-top { display: flex; align-items: center; gap: 15px; }
+        .brand-title { font-size: 24px; font-weight: 800; color: white; }
+        .brand-accent { color: var(--neon); }
+        .logo-monogram { width: 80px; height: 20px; }
+        .trace-line { 
+            stroke: var(--neon); stroke-width: 1.5; fill: none; 
+            stroke-dasharray: 100; animation: draw 3s infinite alternate; 
+        }
+        .node { fill: var(--neon); filter: drop-shadow(0 0 5px var(--neon)); }
+        .brand-tagline { 
+            font-size: 10px; letter-spacing: 2px; color: var(--silver); 
+            text-transform: uppercase; margin-top: 4px; display: block; 
+        }
+        
+        @keyframes draw { 
+            from { stroke-dashoffset: 100; } 
+            to { stroke-dashoffset: 0; } 
+        }
+
+        .nav-link-custom {
+            font-size: 12px; font-weight: 600; text-transform: uppercase; 
+            letter-spacing: 1.5px; color: var(--silver); position: relative; 
+            transition: var(--transition);
+        }
+        .nav-link-custom:hover { color: var(--neon); text-shadow: 0 0 8px var(--neon); }
+        
+        /* --- Footer Styles --- */
+        .footer-border { border-top: 1px solid var(--glass-border); }
+        .footer-link { color: var(--silver); transition: var(--transition); }
+        .footer-link:hover { color: var(--neon); padding-left: 5px; }
+        
+        .btn-consultation {
+            border: 1px solid var(--neon);
+            color: var(--neon);
+            padding: 0.6rem 1.5rem;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+        }
+        .btn-consultation:hover {
+            background: var(--neon);
+            color: var(--dark-bg);
+            box-shadow: 0 0 20px rgba(57, 255, 20, 0.4);
+        }
+    </style>
+</head>
+<div class="progress-bar" id="page-loader"></div>
+<body>
+
+    <nav class="custom-navbar fixed top-0 w-full">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a class="brand-container block no-underline" href="/">
+                <div class="brand-top">
+                    <span class="brand-title text-white">PEKIM<span class="brand-accent">dev</span></span>
+                    <div class="logo-monogram">
+                        <svg viewBox="0 0 100 20" xmlns="http://www.w3.org/2000/svg">
+                            <path class="trace-line" d="M0 10 H30 L40 2 L50 18 L60 10 H100" />
+                            <circle class="node pulse" cx="40" cy="2" r="2.5" />
+                            <circle class="node" cx="50" cy="18" r="2.5" />
+                        </svg>
+                    </div>
+                </div>
+                <span class="brand-tagline">UNCOMPROMISING QUALITY, <br class="d-sm-none"> UNRIVALED PERFORMANCE</span>
+            </a>
+
+            <div class="hidden lg:flex items-center space-x-8">
+                <a href="/" class="nav-link-custom">Home</a>
+                <a href="/about" class="nav-link-custom">About</a>
+                <a href="/services" class="nav-link-custom">Our Services</a>
+                <a href="/projects" class="nav-link-custom">Our Work</a>
+                <a href="/contact" class="btn-consultation ml-4">Free Consultation</a>
+            </div>
+
+            <button class="lg:hidden text-white text-2xl focus:outline-none transition-colors duration-200 hover:text-[#39FF14]" id="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div id="mobile-menu-drawer" class="fixed inset-y-0 right-0 w-72 bg-[#050a15]/95 backdrop-blur-lg border-l border-white/5 z-[2000] transform translate-x-full transition-transform duration-300 ease-out flex flex-col justify-between px-6 py-8 font-mono">
+        <div>
+            <div class="flex justify-end mb-12">
+                <button id="mobile-close" class="text-white text-xl focus:outline-none hover:text-[#39FF14] transition-colors duration-200 flex items-center">
+                    <span class="text-[10px] text-white/30 mr-2 uppercase tracking-[0.2em] font-light">[ Close ]</span>
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="flex flex-col space-y-6 text-left">
+                <div class="border-b border-white/5 pb-2">
+                    <span class="text-[9px] text-[#39FF14] block mb-1 font-bold">// INDEX_01</span>
+                    <a href="/" class="text-base font-bold text-white uppercase tracking-wider hover:text-[#39FF14] transition-colors">Home</a>
+                </div>
+                <div class="border-b border-white/5 pb-2">
+                    <span class="text-[9px] text-[#39FF14] block mb-1 font-bold">// INDEX_02</span>
+                    <a href="/about" class="text-base font-bold text-white uppercase tracking-wider hover:text-[#39FF14] transition-colors">About</a>
+                </div>
+                <div class="border-b border-white/5 pb-2">
+                    <span class="text-[9px] text-[#39FF14] block mb-1 font-bold">// INDEX_03</span>
+                    <a href="/services" class="text-base font-bold text-white uppercase tracking-wider hover:text-[#39FF14] transition-colors">Services</a>
+                </div>
+                <div class="border-b border-white/5 pb-2">
+                    <span class="text-[9px] text-[#39FF14] block mb-1 font-bold">// INDEX_04</span>
+                    <a href="/projects" class="text-base font-bold text-white uppercase tracking-wider hover:text-[#39FF14] transition-colors">Projects</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pt-6">
+            <a href="/contact" class="btn-consultation block text-center w-full !px-4">
+                Free Consultation
+            </a>
+        </div>
+    </div>
+
+    <main id="swup" class="pt-24 min-h-screen">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer-border bg-[#050a15] pt-16 pb-8 mt-20 relative overflow-hidden">
+        <div class="absolute inset-0 bg-dot-grid opacity-[0.03] pointer-events-none"></div>
+        
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 relative z-10">
+            <div class="space-y-6">
+                <div class="brand-top">
+                    <span class="brand-title text-white">PEKIM<span class="brand-accent">dev</span></span>
+                </div>
+                <p class="text-sm text-gray-400 leading-relaxed max-w-xs font-normal">
+                    Empowering businesses with advanced technology solutions for a digital world. We believe in innovation, sustainability, and creating solutions that shape the future.
+                </p>
+                <div class="flex space-x-4 text-xl">
+                    <a href="https://linkedin.com/in/peter-kimani-aa4954282" class="footer-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="footer-link"><i class="fab fa-github"></i></a>
+                    <a href="https://wa.me/254797933409" class="footer-link"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-white font-semibold uppercase tracking-widest text-xs mb-6 font-mono text-[#39FF14]">// Quick Links</h4>
+                <ul class="space-y-4 flex flex-col">
+                    <li><a href="/" class="footer-link text-sm">Home</a></li>
+                    <li><a href="/about" class="footer-link text-sm">About Us</a></li>
+                    <li><a href="/services" class="footer-link text-sm">Our Services</a></li>
+                    <li><a href="/projects" class="footer-link text-sm">Our Work</a></li>
+                    <li><a href="/contact" class="footer-link text-sm">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-semibold uppercase tracking-widest text-xs mb-6 font-mono text-[#39FF14]">// Contact Us</h4>
+                <ul class="space-y-4 text-sm text-gray-400">
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-phone text-[#39FF14] mt-1"></i>
+                        <span>+254 797 933 409</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-envelope text-[#39FF14] mt-1"></i>
+                        <span>njengapekim@gmail.com</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-location-dot text-[#39FF14] mt-1"></i>
+                        <span>Juja, Kiambu, Kenya</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-6 mt-16 pt-8 border-t border-white/5 text-center relative z-10">
+            <p class="text-[10px] text-gray-600 tracking-[3px] uppercase font-mono">
+                &copy; 2026 PEKIMdev Systems. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle Logic
+        const toggleBtn = document.getElementById('mobile-toggle');
+        const closeBtn = document.getElementById('mobile-close');
+        const menuDrawer = document.getElementById('mobile-menu-drawer');
+
+        toggleBtn.addEventListener('click', () => {
+            menuDrawer.classList.remove('translate-x-full');
+        });
+
+        closeBtn.addEventListener('click', () => {
+            menuDrawer.classList.add('translate-x-full');
+        });
+
+        // Close menu when a link is clicked
+        menuDrawer.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuDrawer.classList.add('translate-x-full');
+            });
+        });
+
+        // Initialize AOS (Animate On Scroll)
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.AOS) {
+                AOS.init({
+                    duration: 800,
+                    easing: 'ease-out-back',
+                    once: false,
+                    mirror: true,
+                    offset: 120
+                });
+            }
+        });
+    </script>
+
+    <script>
+        // Native Progress Bar for Standard Page Loads
+        // Shows progress bar when user clicks a nav link, animates during load, hides when complete
+        
+        const progressBar = document.getElementById('page-loader');
+        let progressInterval;
+        let currentProgress = 0;
+
+        // Simulate progress animation
+        function simulateProgress() {
+            if (currentProgress < 90) {
+                currentProgress += Math.random() * (30 - 10) + 10;
+                if (currentProgress > 90) currentProgress = 90;
+                progressBar.style.width = currentProgress + '%';
+            }
+        }
+
+        // Show and start progress when nav link is clicked
+        function startProgress() {
+            currentProgress = 10;
+            progressBar.classList.remove('hidden');
+            progressBar.style.width = '10%';
+            progressInterval = setInterval(simulateProgress, 300);
+        }
+
+        // Complete progress and hide when page fully loads
+        function completeProgress() {
+            clearInterval(progressInterval);
+            currentProgress = 100;
+            progressBar.style.width = '100%';
+            
+            // Hide after completion
+            setTimeout(() => {
+                progressBar.classList.add('hidden');
+            }, 500);
+        }
+
+        // Attach click handlers to all nav links for standard page navigation
+        function attachProgressToLinks() {
+            document.querySelectorAll('a[href^="/"]').forEach(link => {
+                // Skip if link has data-no-nav or is already handled
+                if (link.dataset.progressAttached) return;
+                if (link.dataset.noNav) return;
+                
+                link.addEventListener('click', (e) => {
+                    // Only show progress for same-domain navigations
+                    const href = link.getAttribute('href');
+                    if (href && href.startsWith('/')) {
+                        startProgress();
+                    }
+                });
+                link.dataset.progressAttached = 'true';
+            });
+        }
+
+        // Show progress when page starts loading
+        window.addEventListener('beforeunload', startProgress);
+
+        // Hide progress when page fully loads
+        window.addEventListener('load', completeProgress);
+
+        // Initialize on page ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', attachProgressToLinks);
+        } else {
+            attachProgressToLinks();
+        }
+
+        // Also attach to dynamically added links if needed
+        document.addEventListener('click', (e) => {
+            const link = e.target.closest('a[href^="/"]');
+            if (link && !link.dataset.progressAttached && !link.dataset.noNav) {
+                startProgress();
+                link.dataset.progressAttached = 'true';
+            }
+        }, true);
+    </script>
+
+
+    
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</body>
+</html>

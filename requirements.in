@@ -1,0 +1,4 @@
+Flask
+Pillow
+Flask-Mail
+python-dotenv

@@ -1,0 +1,138 @@
+/* --- PROJECTS HERO EXTENSIONS --- */
+
+/* Transparent Stroke Typography for the High-End Look */
+.stroke-text {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.9);
+}
+
+/* Neon Glow Effect on Text Hover/Load */
+.text-glow-neon {
+    color: transparent;
+    -webkit-text-stroke: 1px #39FF14;
+    text-shadow: 0 0 20px rgba(57, 255, 20, 0.4);
+}
+
+/* Structural Blueprint Grid Pattern (Using pure linear gradients) */
+.bg-grid-pattern {
+    background-size: 40px 40px;
+    background-image: 
+        linear-gradient(to right, rgba(148, 163, 184, 0.1) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(148, 163, 184, 0.1) 1px, transparent 1px);
+}
+
+
+
+/* --- PREMIUM PROJECT CARD & HOVER GRAPHICS --- */
+
+/* Filter Bar Actions */
+.filter-btn {
+    padding: 0.6rem 1.2rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.01);
+    color: #64748b;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.filter-btn:hover {
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.active-filter {
+    border-color: #39FF14;
+    color: #39FF14;
+    background: rgba(57, 255, 20, 0.02);
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.05);
+}
+
+.filter-count {
+    font-size: 10px;
+    opacity: 0.5;
+    margin-left: 3px;
+}
+
+/* Card Visual Frame */
+.project-media-box {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3; /* Uniform card images ratio */
+    overflow: hidden;
+    background: #0b1329;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.project-media-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* On Card Hover, scale the image out subtly */
+.project-card:hover .project-media-img {
+    transform: scale(1.05);
+}
+
+/* Interactive Overlay Reveal Layer */
+.project-media-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(5, 10, 21, 0.85); /* Deep dark fade on match */
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.project-card:hover .project-media-overlay {
+    opacity: 1;
+}
+
+/* The Premium "View Website" Link Activation Button */
+.view-project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid #39FF14;
+    color: #39FF14;
+    font-mono: true;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background: transparent;
+    transform: translateY(15px);
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.project-card:hover .view-project-link {
+    transform: translateY(0);
+    background: #39FF14;
+    color: #050a15;
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.4);
+}
+
+/* Clean Typography Under the Cards */
+.project-card-title {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.01em;
+    transition: color 0.3s ease;
+}
+
+.project-card:hover .project-card-title {
+    color: #39FF14;
+}
+
+.project-card-desc {
+    font-size: 0.875rem;
+    color: #94a3b8;
+    font-weight: 300;
+    line-height: 1.6;
+}

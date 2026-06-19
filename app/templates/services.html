@@ -1,0 +1,432 @@
+{% extends "base.html" %}
+{% block title %}<title>PEKIMDEV|{{ title }}</title>{% endblock %}
+{% block preloads %}
+<link rel="preload" as="image" href="{{ url_for('static', filename='images/webp/image6.webp') }}">
+{% endblock %}
+{% block content %}
+
+<!-- Flash Message -->
+<div id="flash-message" class="fixed top-6 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-6 py-4 rounded-lg shadow-lg flex items-center gap-3 opacity-0 transition-opacity duration-300 pointer-events-none z-50">
+    <i class="fa-solid fa-check-circle text-xl"></i>
+    <span id="flash-text">Email sent successfully!</span>
+</div>
+
+
+<section class="relative h-[70vh] min-h-[550px] flex items-center overflow-hidden bg-[#050a15]">
+    <div class="absolute inset-0 z-0">
+        <img src="{{ url_for('static', filename='images/webp/image6.webp') }}" class="w-full h-full object-cover object-right opacity-90 pointer-events-none lg:scale-105 transition-transform lg:duration-[5000ms] ease-linear slide-bg" alt="Tech Background">
+        
+        <div class="absolute inset-0 bg-[#050a15]/65 z-10"></div>
+        
+        <div class="absolute inset-0 bg-gradient-to-r from-[#050a15]/50 to-transparent z-20"></div>
+    </div>
+
+    <div class="container mx-auto px-6 relative z-30">
+        <div class="max-w-4xl" data-aos="fade-right">
+            <div class="flex items-center gap-3 mb-5">
+                <div class="h-[1px] w-6 bg-[#39FF14]/60"></div>
+                <span class="font-mono text-[#39FF14] tracking-[0.5em] uppercase text-[10px] font-bold">Pekimdev Systems</span>
+            </div>
+            
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-white uppercase tracking-tight leading-[1.1] mb-6">
+                What <br><span class="text-[#39FF14] drop-shadow-[0_0_15px_rgba(57,255,20,0.3)]">We Offer</span>
+            </h1>
+            
+            <p class="text-slate-200 text-sm md:text-base font-light max-w-xl leading-relaxed border-t border-b border-[#39FF14]/20 py-4 px-6">
+                High-performance digital platforms built from the ground up. We architect digital assets that drive real-world results.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="py-24 bg-white relative"> <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <div class="service-card group bg-white border border-slate-100 shadow-sm" data-aos="fade-up">
+                <div class="service-icon"><i class="fa-solid fa-pen-nib"></i></div>
+                <h3 class="service-title">Custom Website Design</h3>
+                <p class="service-desc">Sites that look like you, not like everyone else. We build smooth, fast, and easy-to-use layouts that grab attention.</p>
+                <div class="service-accent"></div>
+            </div>
+
+            <div class="service-card group bg-white border border-slate-100 shadow-sm" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+                <h3 class="service-title">Custom E-commerce Systems</h3>
+                <p class="service-desc">Online shops that actually work. From simple carts to secure checkouts, we make selling your products easy and safe.</p>
+                <div class="service-accent"></div>
+            </div>
+
+            <div class="service-card group bg-white border border-slate-100 shadow-sm" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-icon"><i class="fa-solid fa-user-tie"></i></div>
+                <h3 class="service-title">Personal Brand Platforms</h3>
+                <p class="service-desc">The professional home for experts and creators. A place that tells your story and helps you grow your influence.</p>
+                <div class="service-accent"></div>
+            </div>
+
+            <div class="service-card group bg-white border border-slate-100 shadow-sm" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-icon"><i class="fa-solid fa-microchip"></i></div>
+                <h3 class="service-title">Corporate Digital Infrastructure</h3>
+                <p class="service-desc">Large-scale websites for big teams. Secure, powerful, and ready to handle serious business traffic.</p>
+                <div class="service-accent"></div>
+            </div>
+
+            <div class="service-card group bg-white border border-slate-100 shadow-sm" data-aos="fade-up" data-aos-delay="400">
+                <div class="service-icon"><i class="fa-solid fa-chart-pie"></i></div>
+                <h3 class="service-title">SEO Optimization & Analytics</h3>
+                <p class="service-desc">We don't just build sites; we make sure people find them. We use smart data to help your business climb the search results.</p>
+                <div class="service-accent"></div>
+            </div>
+
+            <div class="service-card group bg-white border border-slate-100 shadow-sm" data-aos="fade-up" data-aos-delay="500">
+                <div class="service-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                <h3 class="service-title">Website Maintenance & Support</h3>
+                <p class="service-desc">We keep the lights on. Regular updates, security checks, and quick fixes so you never have to worry about your site breaking.</p>
+                <div class="service-accent"></div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+<section id="quote-services" class="relative py-24 overflow-hidden bg-[#050a15] text-white border-t border-slate-900">
+    <div class="absolute inset-0 z-0">
+        <img src="static/images/webp/image4.webp" class="w-full h-auto object-contain lg:object-cover lg:h-full opacity-20 pointer-events-none" alt="Quote Background">
+        <div class="absolute inset-0 bg-gradient-to-b from-[#050a15] via-transparent to-[#050a15] z-10"></div>
+    </div>
+    
+    <div class="container mx-auto px-6 relative z-10">
+        <div class="text-center mb-12 lg:mb-20" data-aos="fade-up">
+            <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tight mb-4">
+                Get a Quote <span class="text-[#39FF14]">From Us</span>
+            </h2>
+            <div class="h-[1px] w-40 bg-[#39FF14] mx-auto shadow-[0_0_15px_#39FF14]" data-aos="width-expand"></div>
+        </div>
+
+        <div id="quote-swipe-indicator" class="flex lg:hidden items-center justify-center gap-2 mb-8 animate-pulse bg-[#39FF14]/10 border border-[#39FF14]/20 py-2 px-4 rounded-sm max-w-xs mx-auto">
+            <span class="font-mono text-[10px] text-[#39FF14] tracking-widest uppercase font-bold">[ Swipe left to fill form → ]</span>
+        </div>
+
+        <div class="overflow-hidden lg:overflow-visible max-w-6xl mx-auto">
+            
+            <div id="quote-services-track" class="flex lg:grid lg:grid-cols-2 w-[200%] lg:w-full transition-transform duration-500 ease-out gap-0 lg:gap-16">
+                
+                <div class="w-1/2 lg:w-full shrink-0 pr-4 lg:pr-0 space-y-12" data-aos="fade-right">
+                    <div>
+                        <h4 class="text-[#39FF14] font-mono uppercase tracking-[0.3em] text-xs mb-6">Execution Strategy</h4>
+                        <p class="text-slate-300 text-lg leading-relaxed">
+                            Tell us what you need through the form below. Our team will analyze your project and send back a 
+                            <span class="text-white font-bold underline decoration-[#39FF14] decoration-2">fully tailored quote within 24 hours</span>. 
+                            We make sure the plan fits your budget and your future goals perfectly.
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-[#39FF14] font-mono uppercase tracking-[0.3em] text-xs mb-6">Why Get a Quote From Us?</h4>
+                        <div class="space-y-6">
+                            <div class="glass-reason group" data-aos="fade-right" data-aos-delay="100">
+                                <div class="reason-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
+                                <div>
+                                    <h5 class="reason-title">Fast Response (1 to 6 Business Hours)</h5>
+                                    <p class="reason-text">Time is money. We won't keep you waiting for days. Once you reach out, you’ll hear back from us in 1 to 6 business hours.</p>
+                                </div>
+                            </div>
+
+                            <div class="glass-reason group" data-aos="fade-right" data-aos-delay="200">
+                                <div class="reason-icon"><i class="fa-solid fa-receipt"></i></div>
+                                <div>
+                                    <h5 class="reason-title">Transparent Pricing</h5>
+                                    <p class="reason-text">No "surprise" fees or hidden costs. We provide a clear breakdown so you know exactly where every Shilling is going.</p>
+                                </div>
+                            </div>
+
+                            <div class="glass-reason group" data-aos="fade-right" data-aos-delay="300">
+                                <div class="reason-icon"><i class="fa-solid fa-compass-drafting"></i></div>
+                                <div>
+                                    <h5 class="reason-title">Built for Your Specific Needs</h5>
+                                    <p class="reason-text">Your business isn't a copy of someone else's. We don't use boring templates; we architect a platform that fits your specific vision.</p>
+                                </div>
+                            </div>
+
+                            <div class="glass-reason group" data-aos="fade-right" data-aos-delay="400">
+                                <div class="reason-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+                                <div>
+                                    <h5 class="reason-title">Free of Charge (Zero Risk)</h5>
+                                    <p class="reason-text">Getting a plan shouldn't cost you. Our full project analysis and price quotation are 100% free, with no strings attached.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-1/2 lg:w-full shrink-0 pl-4 lg:pl-0 relative" data-aos="fade-left">
+                    <div class="mb-8">
+                        <p class="text-slate-300 italic leading-relaxed border-l-4 border-[#39FF14] pl-6 bg-white/5 py-6 rounded-r-lg">
+                            "We offer <span class="text-white font-bold">flexible and custom-engineered builds</span>. Reach out with your project description and budget, and lets architect a platform built specifically for your goals, and we’ll send you a customized quote."
+                        </p>
+                    </div>
+
+                    <form id="quote-services-form" class="bg-white/5 backdrop-blur-2xl p-8 border border-white/10 rounded-sm shadow-2xl">
+                        <div class="space-y-5">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                <div class="relative">
+                                    <i class="fa-solid fa-user input-icon"></i>
+                                    <input type="text" placeholder="Your Name" class="quote-input" required>
+                                </div>
+                                <div class="relative">
+                                    <i class="fa-solid fa-envelope input-icon"></i>
+                                    <input type="email" placeholder="Your Email Address" class="quote-input" required>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                <div class="relative">
+                                    <i class="fa-solid fa-phone input-icon"></i>
+                                    <input type="tel" placeholder="Phone Number" class="quote-input">
+                                </div>
+                                <div class="relative">
+                                    <i class="fa-solid fa-building input-icon"></i>
+                                    <input type="text" placeholder="Company Name" class="quote-input">
+                                </div>
+                            </div>
+
+                            <div class="relative">
+                                <i class="fa-solid fa-list-check input-icon"></i>
+                                <select class="quote-input appearance-none bg-[#050a15] pr-10" required>
+                                    <option selected disabled value="">What service are you looking for?</option>
+                                    <option>Web Design/Development</option>
+                                    <option>Ecommerce Website</option>
+                                    <option>Software Development</option>
+                                    <option>SEO</option>
+                                    <option>Website Maintenance</option>
+                                </select>
+                                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-400">
+                                    <i class="fa-solid fa-chevron-down text-xs"></i>
+                                </div>
+                            </div>
+
+                            <div class="relative">
+                                <i class="fa-solid fa-money-bill-wave input-icon"></i>
+                                <select class="quote-input appearance-none bg-[#050a15] pr-10" required>
+                                    <option selected disabled value="">Budget Range (KSH)</option>
+                                    <option>Less than 15,000</option>
+                                    <option>15,000 - 30,000</option>
+                                    <option>30,000 - 60,000</option>
+                                    <option>60,000 - 100,000</option>
+                                    <option>100,000 - 150,000</option>
+                                    <option>150,000+</option>
+                                </select>
+                                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-400">
+                                    <i class="fa-solid fa-chevron-down text-xs"></i>
+                                </div>
+                            </div>
+
+                            <div class="relative">
+                                <i class="fa-solid fa-message input-icon top-4"></i>
+                                <textarea placeholder="Please describe what you need. If it's a website, let us know what kind of site it is." class="quote-input h-32 pt-3" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full py-5 bg-[#39FF14] text-[#050a15] font-black uppercase tracking-[0.3em] text-sm hover:bg-white transition-all duration-500 shadow-[0_10px_30px_rgba(57,255,20,0.3)] group relative">
+                                <span class="submit-btn-text">Submit Request <i class="fa-solid fa-paper-plane ml-2 group-hover:translate-x-2 transition-transform"></i></span>
+                                <span class="submit-btn-spinner hidden">
+                                    <i class="fa-solid fa-spinner animate-spin"></i>
+                                    <span class="ml-2">Sending...</span>
+                                </span>
+                            </button>
+                        </div>
+                    </form>
+
+                    <div class="mt-12 text-center">
+                        <p class="text-slate-500 font-mono text-[10px] uppercase tracking-[0.4em] mb-6">Or if you prefer to contact us directly</p>
+                        <div class="flex flex-wrap justify-center gap-6">
+                            <a href="https://wa.me/254797933409" class="contact-pill-neon group">
+                                <i class="fa-brands fa-whatsapp text-xl group-hover:scale-125 transition-transform"></i>
+                                <span>Chat with Us</span>
+                            </a>
+                            <a href="tel:254797933409" class="contact-pill-white group">
+                                <i class="fa-solid fa-phone-volume text-lg group-hover:shake transition-transform"></i>
+                                <span>Call Us Now</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const track = document.getElementById('quote-services-track');
+    const form = document.getElementById('quote-services-form');
+    const indicator = document.getElementById('quote-swipe-indicator');
+    
+    let currentSlide = 0;
+    let autoPlayActive = true;
+    let slideTimer;
+
+    // 1. RUNTIME AUTOMATIC ROTATION ROUTINE
+    function startAutoPlay() {
+        // Only initiate sliding behavior if screen view size matches mobile bounds (< 1024px)
+        if (window.innerWidth >= 1024) return;
+        
+        slideTimer = setInterval(() => {
+            if (autoPlayActive) {
+                currentSlide = currentSlide === 0 ? 1 : 0;
+                updateSlidePosition();
+            }
+        }, 5000); // Cycles back and forth every 5 seconds
+    }
+
+    function updateSlidePosition() {
+        if (currentSlide === 1) {
+            track.style.transform = "translateX(-50%)";
+            if (indicator) indicator.style.opacity = "0"; // Instantly hide help banner once form comes into view
+        } else {
+            track.style.transform = "translateX(0%)";
+        }
+    }
+
+    // 2. HARD INTERCEPT MANUAL OVERRIDE ENGINE
+    function freezeToManualMode() {
+        if (autoPlayActive) {
+            autoPlayActive = false;
+            clearInterval(slideTimer); // Destroys the interval timer loop entirely
+            currentSlide = 1; // Safely locks viewport view context position directly over the form fields
+            updateSlidePosition();
+        }
+    }
+
+    // Capture focus, text inputs, and select interactions inside form wrapper
+    if (form) {
+        form.addEventListener('focusin', freezeToManualMode);
+        form.addEventListener('input', freezeToManualMode);
+        form.addEventListener('change', freezeToManualMode);
+    }
+
+    // 3. PHYSICAL TOUCH SWIPE GESTURE CAPTURE
+    let startX = 0;
+    let endX = 0;
+
+    track.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+    }, { passive: true });
+
+    track.addEventListener('touchend', (e) => {
+        endX = e.changedTouches[0].clientX;
+        handleSwipeGesture();
+    }, { passive: true });
+
+    function handleSwipeGesture() {
+        const threshold = 40; // Pixels distance threshold to log as a direct swipe event
+        if (startX - endX > threshold) {
+            currentSlide = 1; // User swiped left -> Slide form container element into view
+            updateSlidePosition();
+        } else if (endX - startX > threshold) {
+            currentSlide = 0; // User swiped right -> Return back to core values proposition overview
+            updateSlidePosition();
+        }
+    }
+
+    // Fire Engine Runtime Loop
+    startAutoPlay();
+    
+    // Monitors dynamic orientation/viewport scaling modifications
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 1024) {
+            track.style.transform = "none";
+            clearInterval(slideTimer);
+        } else if (!slideTimer && autoPlayActive) {
+            startAutoPlay();
+        }
+    });
+});
+</script>
+
+<!-- Form Submission Handler -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById('quote-services-form');
+    
+    if (form) {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const btnText = submitBtn.querySelector('.submit-btn-text');
+            const btnSpinner = submitBtn.querySelector('.submit-btn-spinner');
+            
+            // Show spinner, hide text, disable button
+            btnText.classList.add('hidden');
+            btnSpinner.classList.remove('hidden');
+            submitBtn.disabled = true;
+            
+            // Get form data
+            const formData = {
+                name: form.querySelector('input[placeholder="Your Name"]').value,
+                email: form.querySelector('input[placeholder="Your Email Address"]').value,
+                phone: form.querySelector('input[placeholder="Phone Number"]').value,
+                company: form.querySelector('input[placeholder="Company Name"]').value,
+                service: form.querySelectorAll('select')[0].value,
+                budget: form.querySelectorAll('select')[1].value,
+                description: form.querySelector('textarea').value
+            };
+            
+            try {
+                const response = await fetch('/submit-services-quote', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    // Show success checkmark
+                    btnSpinner.innerHTML = '<i class="fa-solid fa-check"></i><span class="ml-2">Sent!</span>';
+                    
+                    // Show flash message
+                    const flashMessage = document.getElementById('flash-message');
+                    const flashText = document.getElementById('flash-text');
+                    flashText.textContent = result.message || 'Email sent successfully!';
+                    flashMessage.classList.remove('opacity-0');
+                    flashMessage.classList.add('opacity-100');
+                    
+                    // Keep success state for 2 seconds
+                    await new Promise(resolve => setTimeout(resolve, 2000));
+                    
+                    // Fade out flash message
+                    flashMessage.classList.remove('opacity-100');
+                    flashMessage.classList.add('opacity-0');
+                    
+                    // Reset button
+                    btnText.classList.remove('hidden');
+                    btnSpinner.classList.add('hidden');
+                    submitBtn.disabled = false;
+                    form.reset();
+                } else {
+                    alert(result.message || 'An error occurred');
+                    // Hide spinner, show text, enable button on error
+                    btnText.classList.remove('hidden');
+                    btnSpinner.classList.add('hidden');
+                    submitBtn.disabled = false;
+                }
+            } catch (error) {
+                console.error('Form submission error:', error);
+                alert('An error occurred while submitting the form');
+                // Hide spinner, show text, enable button on error
+                btnText.classList.remove('hidden');
+                btnSpinner.classList.add('hidden');
+                submitBtn.disabled = false;
+            }
+        });
+    }
+});
+</script>
+
+{% endblock %}
